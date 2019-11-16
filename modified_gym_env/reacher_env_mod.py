@@ -29,7 +29,7 @@ class ReacherBulletEnv(BaseBulletEnv):
         self.rewards = [float(self.potential), float(electricity_cost)]
         if abs(self.potential) <0.01:
             done = True
-            self.rewards = [0]
+            self.reward = [0]
         self.HUD(state, a, False)
         return state, sum(self.rewards) , done, {}
 
